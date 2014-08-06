@@ -1,0 +1,26 @@
+Version 0.1.0
+	-Creation.
+Version 0.1.1
+	-Deletion of unnecessary files.
+	-Fix submit bug in Edit Assign.
+	-Fix display bug (cancel cross) in Edit Assign.
+Version 0.1.2
+	-Keep the expanded lines at page changement.
+	-Allow edit dates and adapt assign.
+	-Optimize the getAssignement function.
+Version 0.1.2.1
+	-New algorithm of sorting tasks.
+Version 0.1.2.2
+	-Fix the 1 hour tasks bug.
+Version 0.2.0
+	-Fix multi-level dynamic tasks
+	-Re-Expand lines at any time
+	-Merge completeTds scripts
+	-Add mergeTd function which change the display way
+	-Change the way to indicate to JS script what it need to compute
+	-Integrate the project color identifier
+	-Integrate filter icons
+	-Integrate edit icons
+	-Change collapse and expand icons in order to feet with the ones of dotProject core
+	-Change filter form method to POST
+	-Merge various form

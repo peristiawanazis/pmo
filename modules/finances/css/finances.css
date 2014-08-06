@@ -1,0 +1,29 @@
+.multiselect {
+    width:15em;
+    height:5em;
+    border:solid 1px;
+    overflow:auto;
+}
+
+.multiselect:hover{
+    height:auto;
+}
+ 
+.multiselect label {
+    display:block;
+}
+
+.treeTable {
+	background-color: #FFF;
+}
+
+#mainFrm label {
+	cursor: pointer;
+}
+
+#saveButton {
+	display: none;
+	text-align: center;
+}
+
+form[name=budgetFrm] input[disabled ] {background-color: #EEE; color: #555}

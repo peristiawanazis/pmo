@@ -1,0 +1,95 @@
+IGANTT MODULE
+
+ 	iGantt dotproject module : this module should be used as an add-on module of dotProject Project Management Software (see
+	www.dotproject.net for details). It provides an interactive Gantt chart display. Interactive means that the chart can be
+	modified graphically and the result can be sent back to dotproject for updating tasks. This work has been tested with 
+	Mozilla Firefox v3.0.5 and Opera v9.63.
+
+	This module DOES NOT work with INTERNET EXPLORER (and it is not intended to do so in the foreseeable future).
+
+	Copyright (C) 2008-2009  Pierre-Yves SIMONOT (EUXENIS SAS) <pierre-yves.simonot@euxenis.com>
+
+	The dotProject software is distributed under the GNU/GPL licence
+	The XAJAX library (version 0.5  beta 4) is distributed under the BSD licence
+	The wz_jsgraphics library is distributed under GNU/LGPL licence
+	Some design ideas and graphic images come from "hotspoons" who provided an early work in the dotProject forums in november 2006
+	Igantt.ajax class methods definition has been inflenced by the gantt chart methods in the jpgraph library
+
+    This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+INSTALLATION
+	
+	This module is an add-on module of dotProject. Please refer to the add-on module installation instruction
+	in the dotProject documentation <http://docs.dotproject.net/index.php?title=Add_On_Installation>.
+	
+	The AJAX library should be copied under /lib directory. The wz_jsgraphics library is provided under the js directory
+	in the igantt module directory.
+	
+	The iGantt module is given as a 'utility' add-on module (available in dotProject v1.2.1). If you are running dP v1.2.1;
+	the module will show in the module menu, but only as a tab in the project view. For previous version of dP, the module 
+	will show in the module menu bar.
+	
+	Users should be given at least read allow permission to the iGantt module. Other permissions are not checked. On the 
+	other hand, the module checks access permission to companies, projects and individual tasks. These permissions are applied
+	to display the Gantt chart and to allow/deny task modification.
+	
+	For technical reasons, the Gantt chart is displayed in a pop-up window. Make sure that you allow pop-ups in your browser.
+	
+USER GUIDELINES
+
+	To display a project Gantt chart, click on the Igantt tab in the project view. The Gantt will display in a resizable
+	fullscreen pop-up window with scroll bars.
+	
+	The user can select the timespan of the graph. By default, the "show full project" option is selected. The user can:
+	1.	select specific start/end date for the scale using the date fields.
+	2.	show the current month by clicking the corresponding link
+	3.	use the left (resp. right) arrows to scroll the current graph dates by one month backward (resp. forward).
+	
+	Tasks are displayed in hierarchical order. By clicking on the collapse icon, the user can hide the children tasks of the
+	corresponding parent task. The whole display is updated according to the collapse/expand options selected for each task.
+	
+	To change task start/end date, click on the bar and drag it (only horizontally) to the right position. The following
+	rules apply:
+	1.	One cannot modify a completed task (shown as a grey bar in the chart) start/end dates.
+	2.	One cannot modify the start date of a started task.
+	3.	If one clicks on the left end of the bar, only the start date will be modified; on the other hand, if one clicks
+		on the right end of the bar, only the end date will be modified; hence, in both cases, the time span of the task 
+		will be changed. However, the task duration will not be changed in the dP database when updating (task duration is
+		considered as a workload for the task). Otherwise, both the end date and the start date will be modified and the 
+		time span of the task will not change.
+		Note : the cursor shape should change depending on which part of the bar you are hovering. But this function does not seem
+		to work with Opera.
+	4.	For during dragging, an overlay is displayed to indicate the changing dates/hours. This display uses the user 
+		preference date/hour format as set in dP.
+	5.	When dragging a task bar, the dependy drawings are hidden and two grey horizontal lines are displayed above and below
+		the dragged bar. These lines show the time limit of the required (resp. dependent) tasks. No constraints are applied
+		to the dragging and the required/dependent tasks will not be modified. Only if "track dependent tasks" is set under 
+		"dependency tracking" in dP, these dates will be modified when updating tasks in the dP database (see below).
+	
+	Detailed information on a task can be displayed and updated (depending on task edit user permission) using a right click
+	( left click with Ctrl key pressed when using Opera) on the bar. The detailed information is shown in an overlay close to the bar.
+	Task start/end date updates are restricted for dynamic tasks and already started tasks in order to maintain consistency.
+	
+	One can create new dependencies graphically. To do this, click on the required task bar while pressing the Alt key (the selected
+	bar is displayed in red). Then, click on the dependent task bar (no other interaction should take place in between) and the
+	new dependency will be displayed.
+	
+	At any time, the "undo" button can be used to undo the previous actions (starting from the latest action), up to the original
+	graph.
+	
+	The "cancel" button at the bottom left of the chart closes the pop-up window without updating tasks.
+	
+	When the chart is updated, click on the "submit" button at the bottom right of the chart. The tasks start/end dates and
+	dependencies will be updated in the dP database and dependency constraints will apply, if appropriately set. After updating,
+	the project view returns to the tasks tab.

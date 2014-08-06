@@ -1,0 +1,143 @@
+/* jQuery TreeTable Core 2.0 stylesheet
+ *
+ * This file contains styles that are used to display the tree table. Each tree
+ * table is assigned the +treeTable+ class.
+ * ========================================================================= */
+
+/* jquery.treeTable.collapsible
+ * ------------------------------------------------------------------------- */
+ 
+.treeTable{
+  table-layout:fixed;
+  border: 1px solid #888;
+  border-collapse: collapse;
+  line-height: 1;
+  margin: 1em auto;
+  width: 95%;
+}
+
+.treeHead, .treeCal {
+  table-layout:fixed;
+  border-collapse: collapse;
+  width: 100%;
+  height: 100%;
+}
+
+
+.treeTitle{
+  font-size: 100%;
+  font-weight: bold;
+}
+
+.treeYear, .treeMonth, .treeWeek, .treeDay, .treeHour{
+  font-weight: bold;
+  border: 1px solid #888;
+  border-right: none;
+  padding: 0em 0em 0em 0em;
+}
+
+.treeTable > tbody > tr:hover{
+	border: 2px solid black;
+}
+
+.thHead{
+  width:30%;
+}
+
+.thCal{
+  width:70%;
+}
+
+.tdRessource{
+  border: 1px solid #888;
+  border-left:none;
+  padding: .3em 1.5em;
+  width: 30%;
+}
+
+.tdContent,.tdContentUser,.tdContentProject,.tdContentTask{
+  border: 1px solid #888;
+  text-align : center;
+  border-right:none;
+  padding: 0em 0em 0em 0em;
+}
+/* Caption
+ * ------------------------------------------------------------------------- */
+.treeTable caption {
+  font-size: .9em;
+  font-weight: bold;
+}
+
+/* Header
+ * ------------------------------------------------------------------------- */
+.treeTable thead tr th {
+  font-weight: normal;
+  text-align: center;
+}
+
+
+
+/* Body
+ * ------------------------------------------------------------------------- */
+.treeTable tbody tr td {
+  cursor: default;
+}
+
+.treeTable tbody tr.even {
+  background: #f3f3f3;
+}
+
+.treeTable tbody tr.odd {
+  background: #fff;
+}
+
+.treeTable span {
+  background-position: center left;
+  background-repeat: no-repeat;
+  padding: .2em 0 .2em 1.5em;
+}
+
+.treeTable span.file {
+  background-image: url(../images/page_white_text.png);
+}
+
+.treeTable span.folder {
+  background-image: url(../images/folder.png);
+}
+
+
+.treeTable tr td .expander {
+  background-position: left center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  padding: 0;
+  zoom: 1; /* IE7 Hack */
+}
+
+.treeTable tr.collapsed td .expander {
+  background-image: url(../../../images/icons/expand.gif);
+}
+
+.treeTable tr.expanded td .expander {
+  background-image: url(../../../images/icons/collapse.gif);
+}
+
+/* jquery.treeTable.sortable
+ * ------------------------------------------------------------------------- */
+.treeTable tr.selected, .treeTable tr.accept {
+  background-color: #3875d7;
+  color: #fff;
+}
+
+.treeTable tr.collapsed.selected td .expander, .treeTable tr.collapsed.accept td .expander {
+  background-image: url(../images/toggle-expand-light.png);
+}
+
+.treeTable tr.expanded.selected td .expander, .treeTable tr.expanded.accept td .expander {
+  background-image: url(../images/toggle-collapse-light.png);
+}
+
+.treeTable .ui-draggable-dragging {
+  color: #000;
+  z-index: 1;
+}

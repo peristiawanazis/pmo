@@ -1,0 +1,94 @@
+/* jQuery TreeTable Core 2.0 stylesheet
+ *
+ * This file contains styles that are used to display the tree table. Each tree
+ * table is assigned the +treeTable+ class.
+ * ========================================================================= */
+
+/* jquery.treeTable.collapsible
+ * ------------------------------------------------------------------------- */
+ 
+.treeTable{
+  table-layout:fixed;
+  border: 1px solid #888;
+  border-collapse: collapse;
+  line-height: 1;
+  margin: 1em auto;
+  width: 95%;
+}
+
+.tdDesc{
+  border: 1px solid #888;
+  padding: .3em 1.5em;
+  width: 30%;
+}
+
+.tdContent,.tdContentUser,.tdContentProject,.tdContentTask{
+  border: 1px solid #888;
+  text-align : center;
+  padding: 0em 0em 0em 0em;
+  cursor: default;
+}
+
+.tdContentProject{
+	background-color: #D3D3D3;
+}
+
+.parent .tdContentTask{
+	background-color: #E7E7E7;
+}
+
+.tdContentTask{
+	background-color: #F7F7F7;
+}
+
+.treeTable > tbody > tr:hover td{
+	background-color: #EF5 !important;
+}
+
+.treeTable > tbody > tr:hover td a{
+	color: #000 !important;
+}
+.treeTable > tbody > tr:hover td span{
+	cursor: default;
+	color: #000 !important;
+}
+/* Caption
+ * ------------------------------------------------------------------------- */
+.treeTable caption {
+  font-size: .9em;
+  font-weight: bold;
+}
+
+/* Header
+ * ------------------------------------------------------------------------- */
+.treeTable thead tr th {
+  font-size: 100%;
+  border: 1px solid #888;
+  font-weight: bold;
+  text-align: center;
+  padding : 4px 4px 4px 4px;
+}
+
+.treeTable > thead tr th {
+  cursor: default;
+}
+
+
+
+/* Body
+ * ------------------------------------------------------------------------- */
+.treeTable tr td .expander {
+  background-position: left center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  padding: 0;
+  zoom: 1; /* IE7 Hack */
+}
+
+.treeTable tr.collapsed td .expander {
+  background-image: url(../../../images/icons/expand.gif);
+}
+
+.treeTable tr.expanded td .expander {
+  background-image: url(../../../images/icons/collapse.gif);
+}
